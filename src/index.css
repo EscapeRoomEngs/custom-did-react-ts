@@ -1,13 +1,28 @@
+@font-face {
+  font-style: normal;
+  src: local("Pretendard300"), local("Pretendard300");
+  font-family: "Pretendard300";
+  src: url("./assets/font/Pretendard-Light.woff2") format("woff2");
+}
+@font-face {
+  font-style: normal;
+  src: local("Pretendard400"), local("Pretendard400");
+  font-family: "Pretendard400";
+  src: url("./assets/font/Pretendard-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-style: normal;
+  src: local("Pretendard500"), local("Pretendard500");
+  font-family: "Pretendard500";
+  src: url("./assets/font/Pretendard-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-style: normal;
+  src: local("Pretendard600"), local("Pretendard600");
+  font-family: "Pretendard600";
+  src: url("./assets/font/Pretendard-SemiBold.woff2") format("woff2");
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: "Pretendard400", sans-serif;
 }

@@ -1,24 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Icon } from "atom/Icon";
+import styled from "styled-components";
+import GridLayout from "template/GridLayout";
 
 function App() {
+  const ButtonWrapper = styled.button`
+    padding: 8px;
+    border-radius: 100%;
+    cursor: pointer;
+    background-color: var(--red-200);
+  `;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ButtonWrapper>
+        <Icon iconNm="add" iconColor="primary" />
+      </ButtonWrapper>
+      <GridLayout />
     </div>
   );
 }

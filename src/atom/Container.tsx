@@ -71,7 +71,7 @@ export const Container = ({
     background-color: ${bgColor ? token.surface[bgColor]?.hex : "transparent"};
     ${borderColor ? `border: 1px solid ${token.border[borderColor]?.hex}` : ""};
     border-radius: ${radius || 0}px;
-    font-family: "Pretendard300";
+    font-family: "Pretendard400";
   `;
   return (
     <StyledContainer className="grid-container" {...props}>

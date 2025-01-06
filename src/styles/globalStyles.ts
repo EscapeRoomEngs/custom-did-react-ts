@@ -1,16 +1,16 @@
 import { createGlobalStyle } from "styled-components";
-import Pretendard300 from "../assets/fonts/Pretendard-Light.woff2";
-import Pretendard500 from "../assets/fonts/Pretendard-Medium.woff2";
-import Pretendard400 from "../assets/fonts/Pretendard-Regular.woff2";
-import Pretendard600 from "../assets/fonts/Pretendard-SemiBold.woff2";
-import { COLOR } from "./color";
-import { LAYOUT } from "./layout";
-import { TYPOGRAPHY } from "./typography";
+import { COLOR, LAYOUT, TYPOGRAPHY } from "./variables";
+import { primitives } from "foundation/color";
 
-export const GlobalStylesCSS = `
-  ${TYPOGRAPHY}
-  ${COLOR}
-  ${LAYOUT}
+export const GlobalStyles = createGlobalStyle`
+	/* Color Palette */
+	:root {
+		${Object.keys(primitives).map((colorNm) =>
+      Object.keys(Object(primitives)[colorNm]).map(
+        (depth) => `--${colorNm}-${depth}: ${Object(primitives)[colorNm][depth]};`
+      )
+    )}
+	}
   html, body, div, span, applet, object, iframe,
 	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 	a, abbr, acronym, address, big, cite, code,
@@ -88,36 +88,7 @@ export const GlobalStylesCSS = `
 		text-decoration: none;
 		color: inherit;
 	}
-`;
-
-export const GlobalStyles = createGlobalStyle`
-	@font-face {
-		/* font-weight: 300 */
-		font-style: normal;
-		src: local("Pretendard300"), local("Pretendard300");
-		font-family: "Pretendard300";
-		src: url(${Pretendard300}) format("woff2");
-	}
-	@font-face {
-		/* font-weight: 400 */
-		font-style: normal;
-		src: local("Pretendard400"), local("Pretendard400");
-		font-family: "Pretendard400";
-		src: url(${Pretendard400}) format("woff2");
-	}
-	@font-face {
-		/* font-weight: 500 */
-		font-style: normal;
-		src: local("Pretendard500"), local("Pretendard500");
-		font-family: "Pretendard500";
-		src: url(${Pretendard500}) format("woff2");
-	}
-	@font-face {
-		/* font-weight: 600 */
-		font-style: normal;
-		src: local("Pretendard600"), local("Pretendard600");
-		font-family: "Pretendard600";
-		src: url(${Pretendard600}) format("woff2");
-	}
-	${GlobalStylesCSS}
+	${COLOR}
+	${LAYOUT}
+	${TYPOGRAPHY}
 `;
